@@ -7,7 +7,7 @@ class OrangeTree
   attr_reader :oranges
 
   def initialize (height=0,age=0)
-    @oranges = []
+    @oranges = [] #number of oranges in a tree
     @height = height #height of tree
     @age = age #age of tree
   end
@@ -20,7 +20,12 @@ class OrangeTree
   end
 
   def any_oranges?
-    return @oranges == [] ? false : true
+    #return @oranges == [] ? false : true
+    if @oranges == []
+      return false
+    else
+      return true
+    end
   end
 
   def pick_an_orange!
@@ -31,7 +36,12 @@ class OrangeTree
   end
 
   def dead?
-    return @age > 10 ? true : false
+    #return @age > 10 ? true : false
+    if @age > 10
+      return true
+    else
+      return false
+    end
   end
 
  
@@ -46,9 +56,7 @@ class Orange
 end
 
 tree = OrangeTree.new
-
 tree.age! until tree.any_oranges?
-
 puts "Tree is #{tree.age} years old and #{tree.height} feet tall"
 
   until tree.dead?
